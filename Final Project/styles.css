@@ -1,11 +1,15 @@
 :root {
-  color: #291414;
+  color: #111111;
   background: #fbfbfb;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -24,10 +28,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 24px 40px;
+  gap: 2rem;
+  padding: 22px 40px;
   border-bottom: 4px solid #111;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.92);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -36,19 +40,28 @@ body {
 .brand-wrap {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .brand-mark {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border: 2px solid #111;
+  display: grid;
+  place-items: center;
+}
+
+.brand-mark::before {
+  content: "☕";
+  font-size: 1.5rem;
 }
 
 .brand-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  padding: 0.7rem 1rem;
+  border: 2px solid #111;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .main-nav {
@@ -61,10 +74,10 @@ body {
 .nav-link {
   text-decoration: none;
   color: #111;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
 }
 
 .nav-link.active,
@@ -73,11 +86,178 @@ body {
 }
 
 .login-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #111;
   color: #fff;
   text-decoration: none;
-  padding: 0.95rem 1.4rem;
-  font-size: 0.92rem;
-  letter-spacing: 0.12em;
+  padding: 0.95rem 1.6rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
+}
+
+main {
+  flex: 1;
+}
+
+.hero {
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 120px);
+  padding: 3rem 1.5rem;
+}
+
+.hero-inner {
+  text-align: center;
+  max-width: 920px;
+  width: 100%;
+}
+
+.hero-title-frame {
+  display: inline-block;
+  padding: 1.75rem 2.5rem;
+  border: 4px solid #111;
+  margin-bottom: 2.5rem;
+}
+
+.hero-title-frame h1 {
+  margin: 0;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+
+.hero-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hero-tagline {
+  min-width: 0;
+  border: 2px solid #111;
+  padding: 1rem 1.25rem;
+  font-size: 1.05rem;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  padding: 1rem 1.75rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  border: 2px solid #111;
+  padding: 2.5rem 1.75rem 1.75rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.feature-card::before {
+  content: "☕";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  border: 2px solid #111;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+.feature-card:nth-child(2)::before {
+  content: "❤";
+}
+
+.feature-card:nth-child(3)::before {
+  content: "🏅";
+}
+
+.feature-card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 2px solid #111;
+  margin-bottom: 1.25rem;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.cta-panel {
+  padding: 4rem 1.5rem 5rem;
+  background: #111;
+  color: #fff;
+}
+
+.cta-content {
+  max-width: 930px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-content h2 {
+  display: inline-block;
+  margin: 0 auto 2rem;
+  padding: 1rem 2rem;
+  border: 2px solid #fff;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.cta-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.cta-row p {
+  margin: 0;
+  text-align: left;
+  border: 2px solid #fff;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #111;
+  background: #fff;
+  border: 2px solid #fff;
+  padding: 1rem 1.75rem;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
 }
