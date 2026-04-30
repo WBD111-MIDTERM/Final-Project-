@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Origin Cafe</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="login.css" />
+
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-wrap">
+        <div class="brand-mark"></div>
+        <div class="brand-name">OVEN AND ORIGIN CAFE</div>
+      </div>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="#menu.html" class="nav-link">Menu</a>
+        <a href="#gallery.html" class="nav-link">Gallery</a>
+        <a href="#about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+      <a href="login.html" class="login-btn active">LOG IN</a>
+    </header>
+
+    <main>
+      <div class="login-container">
+        <div class="login-form-wrapper">
+          <h1>Welcome Back</h1>
+          <p class="login-subtitle">Log in to your account</p>
+
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="userType">Login As (Demo)</label>
+              <select id="userType" name="userType">
+                <option value="user">User</option>
+                <option value="admin">Super Admin</option>
+                <option value="staff">Admin Staff</option>
+              </select>
+            </div>
+
+            <button type="submit" class="login-button">LOG IN</button>
+          </form>
+
+          <div class="register-link">
+            Don't have an account? <a href="#register">Register</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
