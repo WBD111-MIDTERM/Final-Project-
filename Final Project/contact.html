@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Oven and Origin Cafe</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-wrap">
+        <div class="brand-mark"></div>
+        <div class="brand-name">OVEN AND ORIGIN CAFE</div>
+      </div>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link active">Contact Us</a>
+      </nav>
+      <a href="login.html" class="login-btn">Log In</a>
+    </header>
+
+    <main>
+      <section class="contact-hero">
+        <div>
+          <p>Say hello</p>
+          <h1>Contact Us</h1>
+          <span>We would love to hear from you, save you a table, or help you plan a small cafe gathering.</span>
+        </div>
+      </section>
+
+      <section class="contact-section" aria-labelledby="contact-heading">
+        <div class="contact-intro">
+          <h2 id="contact-heading">Visit, call, or send us a note.</h2>
+          <p>Whether you are craving coffee, asking about menu favorites, or planning a simple celebration, our team is ready to help.</p>
+        </div>
+
+        <div class="contact-layout">
+          <form class="contact-form" action="#" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+            <label for="topic">What can we help with?</label>
+            <select id="topic" name="topic">
+              <option>Table reservation</option>
+              <option>Menu question</option>
+              <option>Event inquiry</option>
+              <option>Feedback</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us what you need..." required></textarea>
+
+            <button type="submit">Send Message</button>
+            <p class="form-note" aria-live="polite"></p>
+          </form>
+
+          <aside class="contact-details" aria-label="Cafe contact details">
+            <div class="contact-card">
+              <h3>Find Us</h3>
+              <p>2383 Beata St<br>Pandacan, Manila</p>
+              <a href="https://www.google.com/maps/search/?api=1&query=2383+Beata+St+Pandacan+Manila" target="_blank" rel="noopener">Open Map</a>
+            </div>
+
+            <div class="contact-card">
+              <h3>Call or Email</h3>
+              <p><a href="tel:+63283532132">+63 (2) 8-353-2132</a><br><a href="mailto:ovenorigin@cafe.com">ovenorigin@cafe.com</a></p>
+            </div>
+
+            <div class="contact-card">
+              <h3>Hours</h3>
+              <p>Monday - Saturday<br>7:00 AM - 10:00 PM</p>
+              <p>Closed on Sundays for restocking and deep cleaning.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="visit-notes">
+        <div>
+          <h2>Best Times to Drop By</h2>
+          <p>Mornings are perfect for fresh pastries and hot coffee. Afternoons are quieter for studying, catching up, or settling in with an iced drink.</p>
+        </div>
+        <a href="menu.html">Browse Menu</a>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <div>
+          <p>OVEN AND ORIGIN CAFE</p>
+          <nav>
+            <a href="#instagram">Instagram</a>
+            <a href="#twitter">Twitter</a>
+            <a href="#facebook">Facebook</a>
+            <a href="#url">URL</a>
+          </nav>
+        </div>
+        <p>2383 Beata St Pandacan Manila<br>Monday - Saturday: 7am - 10pm</p>
+        <p><a href="tel:+63283532132">+63 (2) 8-353-2132</a><br>ovenorigin@cafe.com</p>
+      </div>
+      <a href="#privacy">Privacy Policy</a>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

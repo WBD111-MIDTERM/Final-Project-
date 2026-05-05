@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Origin Cafe Super Admin</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-page super-admin-page">
+  <div class="admin-shell">
+    <header class="admin-header">
+      <div class="admin-brand">
+        <div class="admin-brand-mark"></div>
+        <div class="admin-brand-name">Origin Cafe</div>
+      </div>
+
+      <nav class="admin-nav" aria-label="Super admin navigation">
+        <a href="#user-management" class="admin-nav-link active" data-admin-tab="user-management">User Management</a>
+        <a href="#financial-management" class="admin-nav-link" data-admin-tab="financial-management">Financial Management</a>
+        <a href="#admin-tools" class="admin-nav-link" data-admin-tab="admin-tools">Admin Tools</a>
+        <a href="#" class="admin-logout" data-logout>Log Out</a>
+      </nav>
+    </header>
+
+    <main class="admin-main">
+      <section id="user-management" class="admin-panel active" data-admin-panel="user-management">
+        <div class="admin-title-row">
+          <h1 class="admin-title">User Management</h1>
+          <button type="button" class="admin-add-btn">+ Add User</button>
+        </div>
+
+        <div class="admin-stats">
+          <article class="admin-stat">
+            <div>
+              <p>Total Users</p>
+              <strong>1,247</strong>
+            </div>
+            <span>U</span>
+          </article>
+          <article class="admin-stat">
+            <div>
+              <p>Admin Staff</p>
+              <strong>8</strong>
+            </div>
+            <span>A</span>
+          </article>
+          <article class="admin-stat">
+            <div>
+              <p>Active Today</p>
+              <strong>342</strong>
+            </div>
+            <span>342</span>
+          </article>
+        </div>
+
+        <section class="admin-box">
+          <h2>All Users</h2>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John Doe</td>
+                  <td>john@example.com</td>
+                  <td><span class="table-pill">User</span></td>
+                  <td><span class="table-pill">Active</span></td>
+                  <td><button type="button" class="icon-btn">Manage</button></td>
+                </tr>
+                <tr>
+                  <td>Jane Smith</td>
+                  <td>jane@example.com</td>
+                  <td><span class="table-pill">User</span></td>
+                  <td><span class="table-pill">Active</span></td>
+                  <td><button type="button" class="icon-btn">Manage</button></td>
+                </tr>
+                <tr>
+                  <td>Admin User</td>
+                  <td>admin@origincafe.com</td>
+                  <td><span class="table-pill">Admin</span></td>
+                  <td><span class="table-pill">Active</span></td>
+                  <td><button type="button" class="icon-btn">Manage</button></td>
+                </tr>
+                <tr>
+                  <td>Bob Johnson</td>
+                  <td>bob@example.com</td>
+                  <td><span class="table-pill">User</span></td>
+                  <td><span class="table-pill">Inactive</span></td>
+                  <td><button type="button" class="icon-btn">Manage</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section id="financial-management" class="admin-panel" data-admin-panel="financial-management">
+        <h1 class="admin-title">Financial Management</h1>
+
+        <div class="finance-stats">
+          <article class="finance-card">
+            <span>₱</span>
+            <h2>Total Revenue</h2>
+            <strong>₱197,600</strong>
+            <p>+12.5% from last quarter</p>
+          </article>
+          <article class="finance-card">
+            <span>EXP</span>
+            <h2>Total Expenses</h2>
+            <strong>₱135,300</strong>
+            <p>Operating costs</p>
+          </article>
+          <article class="finance-card">
+            <span>UP</span>
+            <h2>Net Profit</h2>
+            <strong>₱62,300</strong>
+            <p>31.5% margin</p>
+          </article>
+          <article class="finance-card">
+            <span>DAY</span>
+            <h2>Avg. Daily Revenue</h2>
+            <strong>₱1,647</strong>
+            <p>This month</p>
+          </article>
+        </div>
+
+        <section class="admin-box">
+          <h2>Monthly Breakdown</h2>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Revenue</th>
+                  <th>Expenses</th>
+                  <th>Profit</th>
+                  <th>Margin</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>January</td>
+                  <td>₱45,200</td>
+                  <td>₱32,100</td>
+                  <td><span class="table-badge">₱13,100</span></td>
+                  <td>29.0%</td>
+                </tr>
+                <tr>
+                  <td>February</td>
+                  <td>₱48,500</td>
+                  <td>₱33,200</td>
+                  <td><span class="table-badge">₱15,300</span></td>
+                  <td>31.5%</td>
+                </tr>
+                <tr>
+                  <td>March</td>
+                  <td>₱52,100</td>
+                  <td>₱34,800</td>
+                  <td><span class="table-badge">₱17,300</span></td>
+                  <td>33.2%</td>
+                </tr>
+                <tr>
+                  <td>April</td>
+                  <td>₱51,800</td>
+                  <td>₱35,200</td>
+                  <td><span class="table-badge">₱16,600</span></td>
+                  <td>32.0%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="finance-breakdown-grid">
+          <section class="admin-box">
+            <h2>Revenue Sources</h2>
+            <div class="breakdown-row">
+              <span>Coffee Sales</span>
+              <strong>62%</strong>
+            </div>
+            <div class="breakdown-row">
+              <span>Milk Tea Sales</span>
+              <strong>23%</strong>
+            </div>
+            <div class="breakdown-row">
+              <span>Food Items</span>
+              <strong>15%</strong>
+            </div>
+          </section>
+
+          <section class="admin-box">
+            <h2>Top Expenses</h2>
+            <div class="breakdown-row">
+              <span>Inventory & Supplies</span>
+              <strong>45%</strong>
+            </div>
+            <div class="breakdown-row">
+              <span>Staff Salaries</span>
+              <strong>35%</strong>
+            </div>
+            <div class="breakdown-row">
+              <span>Rent & Utilities</span>
+              <strong>20%</strong>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="admin-tools" class="admin-panel" data-admin-panel="admin-tools">
+        <h1 class="admin-title">Admin Tools</h1>
+
+        <div class="tool-grid">
+          <article class="tool-card">
+            <span>SET</span>
+            <h2>System Settings</h2>
+            <p>Configure global system preferences and options</p>
+            <button type="button">Configure</button>
+          </article>
+          <article class="tool-card">
+            <span>DB</span>
+            <h2>Database Management</h2>
+            <p>Backup, restore, and optimize database</p>
+            <button type="button">Manage</button>
+          </article>
+          <article class="tool-card">
+            <span>BELL</span>
+            <h2>Notifications</h2>
+            <p>Configure system alerts and notifications</p>
+            <button type="button">Setup</button>
+          </article>
+          <article class="tool-card">
+            <span>SEC</span>
+            <h2>Security Settings</h2>
+            <p>Manage security policies and permissions</p>
+            <button type="button">Configure</button>
+          </article>
+          <article class="tool-card">
+            <span>OUT</span>
+            <h2>Export Data</h2>
+            <p>Export reports and data in various formats</p>
+            <button type="button">Export</button>
+          </article>
+          <article class="tool-card">
+            <span>IN</span>
+            <h2>Import Data</h2>
+            <p>Import bulk data from external sources</p>
+            <button type="button">Import</button>
+          </article>
+        </div>
+
+        <section class="system-status">
+          <h2>System Status</h2>
+          <div class="system-status-grid">
+            <div>
+              <p>Server Status</p>
+              <strong>Online</strong>
+            </div>
+            <div>
+              <p>Database Status</p>
+              <strong>Connected</strong>
+            </div>
+            <div>
+              <p>Last Backup</p>
+              <strong>2 hours ago</strong>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
