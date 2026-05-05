@@ -6,7 +6,7 @@
   <title>Login - Origin Cafe</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="login.css" />
-
+ 
 </head>
 <body>
   <div class="page-shell">
@@ -17,17 +17,17 @@
       </div>
       <nav class="main-nav" aria-label="Primary navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="#menu.html" class="nav-link">Menu</a>
-        <a href="#gallery.html" class="nav-link">Gallery</a>
-        <a href="#about.html" class="nav-link">About Us</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="about.html" class="nav-link">About Us</a>
         <a href="contact.html" class="nav-link">Contact Us</a>
       </nav>
       <a href="login.html" class="login-btn active">LOG IN</a>
     </header>
-
+ 
     <main>
       <div class="login-container">
-        <div class="login-form-wrapper">
+        <div class="login-form-wrapper" id="loginFormWrapper">
           <h1>Welcome Back</h1>
           <p class="login-subtitle">Log in to your account</p>
 
@@ -54,25 +54,74 @@
               />
             </div>
 
-            <div class="form-group">
-              <label for="userType">Login As (Demo)</label>
-              <select id="userType" name="userType">
-                <option value="user">User</option>
-                <option value="admin">Super Admin</option>
-                <option value="staff">Admin Staff</option>
-              </select>
-            </div>
-
             <button type="submit" class="login-button">LOG IN</button>
           </form>
 
-          <div class="register-link">
-            Don't have an account? <a href="#register">Register</a>
+          <div class="form-toggle">
+            <p>Admin staff: anthony@origincafe.staff.com</p>
+            <p>Super admin: Conny@origincafe.admin.com</p>
+            Don't have an account? <a href="#" onclick="toggleForms(event)">Register</a>
+          </div>
+        </div>
+
+        <div class="login-form-wrapper" id="registerFormWrapper" style="display: none;">
+          <h1>Create Account</h1>
+          <p class="login-subtitle">Sign up for a new account</p>
+
+          <form id="registerForm">
+            <div class="form-group">
+              <label for="regName">Full Name</label>
+              <input
+                type="text"
+                id="regName"
+                name="name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="regEmail">Email</label>
+              <input
+                type="email"
+                id="regEmail"
+                name="email"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="regPassword">Password</label>
+              <input
+                type="password"
+                id="regPassword"
+                name="password"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="regConfirmPassword">Confirm Password</label>
+              <input
+                type="password"
+                id="regConfirmPassword"
+                name="confirmPassword"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+
+            <button type="submit" class="login-button">REGISTER</button>
+          </form>
+
+          <div class="form-toggle">
+            Already have an account? <a href="#" onclick="toggleForms(event)">Login</a>
           </div>
         </div>
       </div>
     </main>
   </div>
-
+  <script src="login.js"></script>
 </body>
 </html>
