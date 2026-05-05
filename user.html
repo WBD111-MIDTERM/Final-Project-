@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Origin Cafe User</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-page user-web">
+  <div class="admin-shell">
+    <header class="admin-header">
+      <div class="admin-brand">
+        <div class="admin-brand-mark"></div>
+        <div class="admin-brand-name">Origin Cafe</div>
+      </div>
+
+      <nav class="admin-nav" aria-label="User navigation">
+        <a href="#order" class="admin-nav-link active" data-admin-tab="order">Order</a>
+        <a href="#purchase-history" class="admin-nav-link" data-admin-tab="purchase-history">Purchase History</a>
+        <a href="#account-management" class="admin-nav-link" data-admin-tab="account-management">Account Management</a>
+        <a href="#" class="admin-logout" data-logout>Log Out</a>
+      </nav>
+    </header>
+
+    <main class="admin-main">
+      <section id="order" class="admin-panel active" data-admin-panel="order">
+        <h1 class="admin-title">Order</h1>
+
+        <div class="admin-stats">
+          <article class="admin-stat">
+            <div>
+              <p>Coffee Items</p>
+              <strong>12</strong>
+            </div>
+            <span>12</span>
+          </article>
+          <article class="admin-stat">
+            <div>
+              <p>Milk Tea Items</p>
+              <strong>8</strong>
+            </div>
+            <span>8</span>
+          </article>
+          <article class="admin-stat">
+            <div>
+              <p>Pasta & Bread</p>
+              <strong>8</strong>
+            </div>
+            <span>8</span>
+          </article>
+        </div>
+
+        <section class="admin-box">
+          <h2>Start an Order</h2>
+          <div class="admin-order-list">
+            <article class="admin-order">
+              <div>
+                <h3>Coffee Menu <span>Open</span></h3>
+                <p>Browse espresso, latte, cappuccino, americano, mocha, and other coffee drinks.</p>
+                <small>Hot and cold options available.</small>
+              </div>
+              <div class="admin-order-actions">
+                <a href="menu.html" class="admin-price-link">₱109+</a>
+                <a href="menu.html" class="admin-action-link">Order Now</a>
+              </div>
+            </article>
+
+            <article class="admin-order">
+              <div>
+                <h3>Milk Tea Menu <span>Open</span></h3>
+                <p>Choose classic milk tea, brown sugar, taro, wintermelon, matcha, and fruit flavors.</p>
+                <small>Sweet and refreshing choices.</small>
+              </div>
+              <div class="admin-order-actions">
+                <a href="milktea.html" class="admin-price-link">₱110+</a>
+                <a href="milktea.html" class="admin-action-link">Order Now</a>
+              </div>
+            </article>
+
+            <article class="admin-order">
+              <div>
+                <h3>Deserts <span>Open</span></h3>
+                <p>Order cakes, cookies, brownies, ice cream, and other sweet treats.</p>
+                <small>Fresh and delicious options.</small>
+              </div>
+              <div class="admin-order-actions">
+                <a href="pastabread.html" class="admin-price-link">₱75+</a>
+                <a href="pastabread.html" class="admin-action-link">Order Now</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section id="purchase-history" class="admin-panel" data-admin-panel="purchase-history">
+        <h1 class="admin-title">Purchase History</h1>
+
+        <div class="admin-stats">
+          <article class="admin-stat">
+            <div>
+              <p>Total Orders</p>
+              <strong>3</strong>
+            </div>
+            <span>3</span>
+          </article>
+          <article class="admin-stat">
+            <div>
+              <p>This Month</p>
+              <strong>2</strong>
+            </div>
+            <span>2</span>
+          </article>
+          <article class="admin-stat">
+            <div>
+              <p>Total Spent</p>
+              <strong>₱2,520</strong>
+            </div>
+            <span>$</span>
+          </article>
+        </div>
+
+        <section class="admin-box">
+          <h2>Recent Purchases</h2>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Items</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ORD-104</td>
+                  <td>Latte x2, Croissant x1</td>
+                  <td><span class="table-pill">Pending</span></td>
+                  <td><span class="table-badge">₱780</span></td>
+                  <td>2026-05-05</td>
+                </tr>
+                <tr>
+                  <td>ORD-103</td>
+                  <td>Cappuccino x1, Carbonara Pasta x1</td>
+                  <td><span class="table-pill">Processing</span></td>
+                  <td><span class="table-badge">₱950</span></td>
+                  <td>2026-05-04</td>
+                </tr>
+                <tr>
+                  <td>ORD-102</td>
+                  <td>Taro Milk Tea x2</td>
+                  <td><span class="table-pill">Completed</span></td>
+                  <td><span class="table-badge">₱690</span></td>
+                  <td>2026-05-03</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section id="account-management" class="admin-panel" data-admin-panel="account-management">
+        <h1 class="admin-title">Account Management</h1>
+
+        <section class="admin-box">
+          <h2>Account Details</h2>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>Information</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Email</td>
+                  <td><span id="accountEmail">Customer</span></td>
+                  <td><span class="table-pill">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Account Type</td>
+                  <td><span id="accountType">customer</span></td>
+                  <td><span class="table-pill">Customer</span></td>
+                </tr>
+                <tr>
+                  <td>Password</td>
+                  <td>Protected</td>
+                  <td><span class="table-pill">Secured</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

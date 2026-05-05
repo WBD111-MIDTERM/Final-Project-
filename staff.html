@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Origin Cafe Staff</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-page user-web">
+  <div class="admin-shell">
+    <header class="admin-header">
+      <div class="admin-brand">
+        <div class="admin-brand-mark"></div>
+        <div class="admin-brand-name">Origin Cafe</div>
+      </div>
+
+      <nav class="admin-nav" aria-label="Staff navigation">
+        <a href="#orders" class="admin-nav-link active" data-admin-tab="orders">Orders</a>
+        <a href="#customer-report" class="admin-nav-link" data-admin-tab="customer-report">Customer Report</a>
+        <a href="#product-management" class="admin-nav-link" data-admin-tab="product-management">Product Management</a>
+        <a href="#" class="admin-logout" data-logout>Log Out</a>
+      </nav>
+    </header>
+
+    <main class="admin-main">
+      <section id="orders" class="admin-panel active" data-admin-panel="orders">
+        <h1 class="admin-title">Order Management</h1>
+
+        <div class="admin-stats">
+          <article class="admin-stat">
+            <div>
+              <p>Pending</p>
+              <strong>8</strong>
+            </div>
+            <span>8</span>
+          </article>
+          <article class="admin-stat">
+            <div>
+              <p>Processing</p>
+              <strong>12</strong>
+            </div>
+            <span>12</span>
+          </article>
+          <article class="admin-stat">
+            <div>
+              <p>Completed Today</p>
+              <strong>45</strong>
+            </div>
+            <span>45</span>
+          </article>
+        </div>
+
+        <section class="admin-box">
+          <h2>Recent Orders</h2>
+          <div class="admin-order-list">
+            <article class="admin-order">
+              <div>
+                <h3>ORD-104 <span>Pending</span></h3>
+                <p>Customer: John Doe</p>
+                <p>Latte x2, Croissant x1</p>
+                <small>10 mins ago</small>
+              </div>
+              <div class="admin-order-actions">
+                <strong>₱780</strong>
+                <button type="button">Update Status</button>
+              </div>
+            </article>
+
+            <article class="admin-order">
+              <div>
+                <h3>ORD-103 <span>Processing</span></h3>
+                <p>Customer: Jane Smith</p>
+                <p>Cappuccino x1, Carbonara Pasta x1</p>
+                <small>25 mins ago</small>
+              </div>
+              <div class="admin-order-actions">
+                <strong>₱950</strong>
+                <button type="button">Update Status</button>
+              </div>
+            </article>
+
+            <article class="admin-order">
+              <div>
+                <h3>ORD-102 <span>Completed</span></h3>
+                <p>Customer: Bob Johnson</p>
+                <p>Taro Milk Tea x2</p>
+                <small>1 hour ago</small>
+              </div>
+              <div class="admin-order-actions">
+                <strong>₱690</strong>
+                <button type="button">Update Status</button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section id="customer-report" class="admin-panel" data-admin-panel="customer-report">
+        <h1 class="admin-title">Customer Report</h1>
+
+        <div class="admin-stats">
+          <article class="admin-stat">
+            <div>
+              <p>Total Customers</p>
+              <strong>1,247</strong>
+            </div>
+            <span>TC</span>
+          </article>
+          <article class="admin-stat">
+            <div>
+              <p>New This Month</p>
+              <strong>89</strong>
+            </div>
+            <span>89</span>
+          </article>
+          <article class="admin-stat">
+            <div>
+              <p>Avg. Lifetime Value</p>
+              <strong>₱8,200</strong>
+            </div>
+            <span>$</span>
+          </article>
+        </div>
+
+        <section class="admin-box">
+          <h2>Top Customers</h2>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Orders</th>
+                  <th>Total Spent</th>
+                  <th>Last Visit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John Doe</td>
+                  <td>john@example.com</td>
+                  <td>12</td>
+                  <td><span class="table-badge">₱9,080</span></td>
+                  <td>2026-04-20</td>
+                </tr>
+                <tr>
+                  <td>Jane Smith</td>
+                  <td>jane@example.com</td>
+                  <td>8</td>
+                  <td><span class="table-badge">₱5,680</span></td>
+                  <td>2026-04-19</td>
+                </tr>
+                <tr>
+                  <td>Bob Johnson</td>
+                  <td>bob@example.com</td>
+                  <td>15</td>
+                  <td><span class="table-badge">₱11,700</span></td>
+                  <td>2026-04-21</td>
+                </tr>
+                <tr>
+                  <td>Alice Brown</td>
+                  <td>alice@example.com</td>
+                  <td>5</td>
+                  <td><span class="table-badge">₱3,900</span></td>
+                  <td>2026-04-18</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section id="product-management" class="admin-panel" data-admin-panel="product-management">
+        <div class="admin-title-row">
+          <h1 class="admin-title">Product Management</h1>
+          <button type="button" class="admin-add-btn">+ Add Product</button>
+        </div>
+
+        <section class="admin-box">
+          <h2>All Products</h2>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Espresso</td>
+                  <td>Coffee</td>
+                  <td><span class="table-badge">₱109</span></td>
+                  <td><span class="table-pill">In Stock</span></td>
+                  <td><button type="button" class="icon-btn">Edit</button> <button type="button" class="icon-btn">Delete</button></td>
+                </tr>
+                <tr>
+                  <td>Cappuccino</td>
+                  <td>Coffee</td>
+                  <td><span class="table-badge">₱129</span></td>
+                  <td><span class="table-pill">In Stock</span></td>
+                  <td><button type="button" class="icon-btn">Edit</button> <button type="button" class="icon-btn">Delete</button></td>
+                </tr>
+                <tr>
+                  <td>Classic Milk Tea</td>
+                  <td>Milk Tea</td>
+                  <td><span class="table-badge">₱110</span></td>
+                  <td><span class="table-pill">In Stock</span></td>
+                  <td><button type="button" class="icon-btn">Edit</button> <button type="button" class="icon-btn">Delete</button></td>
+                </tr>
+                <tr>
+                  <td>Taro Milk Tea</td>
+                  <td>Milk Tea</td>
+                  <td><span class="table-badge">₱135</span></td>
+                  <td><span class="table-pill">Low Stock</span></td>
+                  <td><button type="button" class="icon-btn">Edit</button> <button type="button" class="icon-btn">Delete</button></td>
+                </tr>
+                <tr>
+                  <td>Carbonara Pasta</td>
+                  <td>Dessert</td>
+                  <td><span class="table-badge">₱205</span></td>
+                  <td><span class="table-pill">In Stock</span></td>
+                  <td><button type="button" class="icon-btn">Edit</button> <button type="button" class="icon-btn">Delete</button></td>
+                </tr>
+                <tr>
+                  <td>Croissant</td>
+                  <td>Dessert</td>
+                  <td><span class="table-badge">₱75</span></td>
+                  <td><span class="table-pill">In Stock</span></td>
+                  <td><button type="button" class="icon-btn">Edit</button> <button type="button" class="icon-btn">Delete</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
