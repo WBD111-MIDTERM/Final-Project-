@@ -54,12 +54,63 @@
               />
             </div>
 
+            <div class="form-group login-extra">
+              <label class="remember-label">
+                <input type="checkbox" id="rememberMe" name="rememberMe" /> Remember me
+              </label>
+              <a href="#" id="forgotPasswordLink" class="forgot-password-link">Forgot password?</a>
+            </div>
+
             <button type="submit" class="login-button">LOG IN</button>
           </form>
 
+          <div id="forgotPasswordPanel" class="forgot-password-panel" style="display: none;">
+            <h2>Reset Password</h2>
+            <p>Enter your email and a new password to reset your account.</p>
+            <form id="forgotPasswordForm">
+              <div class="form-group">
+                <label for="resetEmail">Email</label>
+                <input
+                  type="email"
+                  id="resetEmail"
+                  name="resetEmail"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="resetPassword">New Password</label>
+                <input
+                  type="password"
+                  id="resetPassword"
+                  name="resetPassword"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="resetConfirmPassword">Confirm Password</label>
+                <input
+                  type="password"
+                  id="resetConfirmPassword"
+                  name="resetConfirmPassword"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+              <div class="form-group forgot-actions">
+                <button type="submit" class="login-button">Reset Password</button>
+                <button type="button" class="secondary-button" id="cancelForgotPassword">Cancel</button>
+              </div>
+              <p class="forgot-note">Remembered your password? <a href="#" id="backToLogin">Back to login</a></p>
+            </form>
+          </div>
+
           <div class="form-toggle">
-            <p>Admin staff: anthony@origincafe.staff.com</p>
-            <p>Super admin: Conny@origincafe.admin.com</p>
+            <p>Demo Account</p>
+            <p>User: example@gmail.com</p>
+            <p>Admin: anthony@origincafe.staff.com</p>
+            <p>Superadmin: Conny@origincafe.admin.com</p>
             Don't have an account? <a href="#" onclick="toggleForms(event)">Register</a>
           </div>
         </div>
