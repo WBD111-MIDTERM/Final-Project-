@@ -1,40 +1,49 @@
 // Authentication check for protected pages
-if (window.location.pathname.includes('menu.html') || window.location.pathname.includes('milktea.html') || window.location.pathname.includes('pastabread.html') || window.location.pathname.includes('user.html') || window.location.pathname.includes('staff.html') || window.location.pathname.includes('admin.html')) {
-  if (!localStorage.getItem('isLoggedIn')) {
+const protectedPages = ['user.html', 'staff.html', 'admin.html'];
+const currentPath = window.location.pathname;
+
+const getLoginValue = (key) => sessionStorage.getItem(key) || localStorage.getItem(key);
+const isUserLoggedIn = () => !!getLoginValue('isLoggedIn');
+const clearLoginState = () => {
+  ['isLoggedIn', 'userEmail', 'userType', 'userName'].forEach(key => {
+    sessionStorage.removeItem(key);
+    localStorage.removeItem(key);
+  });
+};
+
+if (protectedPages.some(page => currentPath.includes(page))) {
+  if (!isUserLoggedIn()) {
     window.location.href = 'login.html';
   }
 }
  
 // Logout function
 function logout() {
-  localStorage.removeItem('isLoggedIn');
-  localStorage.removeItem('userEmail');
-  localStorage.removeItem('userType');
-  localStorage.removeItem('userName');
+  clearLoginState();
   window.location.href = 'login.html';
 }
 
 // Check login status and update login button
 document.addEventListener('DOMContentLoaded', function() {
-  const userType = localStorage.getItem('userType');
-  if (window.location.pathname.includes('user.html') && userType !== 'customer') {
-    window.location.href = localStorage.getItem('isLoggedIn') ? 'menu.html' : 'login.html';
-    return;
-  }
+  const userType = getLoginValue('userType');
+  const isLoggedIn = isUserLoggedIn();
 
-  if (window.location.pathname.includes('staff.html') && userType !== 'staff') {
-    window.location.href = localStorage.getItem('isLoggedIn') ? 'menu.html' : 'login.html';
-    return;
-  }
+  // Role-based access control configuration
+  const roleRedirects = {
+    'user.html': 'customer',
+    'staff.html': 'staff',
+    'admin.html': 'admin'
+  };
 
-  if (window.location.pathname.includes('admin.html') && userType !== 'admin') {
-    window.location.href = localStorage.getItem('isLoggedIn') ? 'menu.html' : 'login.html';
+  const requiredRole = Object.keys(roleRedirects).find(page => currentPath.includes(page));
+  if (requiredRole && userType !== roleRedirects[requiredRole]) {
+    window.location.href = isLoggedIn ? 'menu.html' : 'login.html';
     return;
   }
 
   const loginBtn = document.querySelector('.login-btn');
   if (loginBtn) {
-    if (localStorage.getItem('isLoggedIn')) {
+    if (isLoggedIn) {
       loginBtn.textContent = 'Logout';
       loginBtn.href = '#';
       loginBtn.addEventListener('click', function(e) {
@@ -46,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const accountEmail = document.getElementById('accountEmail');
   if (accountEmail) {
-    accountEmail.textContent = localStorage.getItem('userEmail') || 'Customer';
+    accountEmail.textContent = getLoginValue('userEmail') || 'Customer';
   }
 
   const accountType = document.getElementById('accountType');
@@ -97,16 +106,36 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.quantity-controls').forEach(control => {
     const buttons = control.querySelectorAll('.qty-btn');
     const display = control.querySelector('.qty-display');
+    const orderBtn = control.closest('.menu-card').querySelector('.order-btn');
+    const itemName = control.closest('.menu-card').querySelector('h3').textContent;
     let quantity = 0;
+
+    if (orderBtn) {
+      orderBtn.disabled = true;
+    }
 
     buttons[0].addEventListener('click', () => {
       if (quantity > 0) quantity--;
       display.textContent = quantity;
+      orderBtn.disabled = quantity === 0;
     });
 
     buttons[1].addEventListener('click', () => {
       quantity++;
       display.textContent = quantity;
+      orderBtn.disabled = quantity === 0;
+    });
+
+    orderBtn.addEventListener('click', () => {
+      if (!isUserLoggedIn()) {
+        alert('Please log in before placing an order.');
+        window.location.href = 'login.html';
+        return;
+      }
+
+      if (quantity > 0) {
+        alert(`Added ${quantity}x ${itemName} to your cart!`);
+      }
     });
   });
 
